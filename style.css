@@ -1,0 +1,192 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;   
+}
+body {
+    background-color: #000000;
+    color: #fff;
+    font-size: clamp(1.0rem, 2vw, 1.1rem);
+}
+nav {
+    list-style-type: none;
+    text-align: center;
+    padding: 20px 10px;
+    background-color: #070d41;
+}
+
+nav ul {
+    display: inline-block;
+    padding-left: 5%;
+}
+nav li {
+    display: inline-block;
+    padding: 5px 30px;
+    background-color: #070d41;
+}
+
+nav li:hover {
+    background-color: #070d41;
+    border-radius: 10px;
+    border-bottom: 1px solid #fff;
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+}
+
+.scroll-watcher {
+    height: 8px;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    background-color: #fff;
+    width: 100%;
+    scale: 0 1;
+    transform-origin: left;
+    animation: scroll-watcher linear;
+    animation-timeline: scroll();
+}
+
+
+/************** HOMEPAGE  *****************/
+.homepage {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 100px 70px;
+    animation-name: testing ;
+    animation-duration: 4s;
+    animation-timing-function: ease-in-out;
+}
+
+
+h1 {
+    font-family: 'Teko', sans-serif;
+    font-size: 3em;
+    margin: none;
+}
+
+.buttons {
+    text-decoration: none;
+    color: #fff;
+    background-color: #070d41; 
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.buttons:hover {
+    background-color: #040720;
+    border-bottom: 1px solid #fff;    
+}
+
+
+
+/*************** CARS ANIMATION ****************/
+.container {
+    padding: 200px;
+    margin: 0;
+}
+
+.cars {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    text-align: center;
+    color: #000000;
+    background-color: #fff;
+    border-radius: 20px;
+    margin: 20px;
+    animation: fade linear both;
+    animation-timeline: view();
+    animation-range: entry 50% cover 50%;
+    padding: none;
+}
+
+.cars-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: relative;
+    /* top: 0;
+    left: 0; */
+    /* overflow: hidden; */
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    animation: fade-in linear both;
+    animation-timeline: view();
+    animation-range: entry 50% cover 50%;
+}
+
+
+@media (max-width: 700px) {
+    .homepage {
+        margin: 5rem 0rem;
+    }
+    .container {
+        padding: 50px;
+    }
+    .cars {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .car-text h1 {
+        /* font-size: clamp(1.0rem, 2vw, 1.1rem); */
+        padding: 15px;
+    }
+    .cars-img {
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+        border-top-right-radius: 0;
+    }
+    nav ul {
+        display: none;
+    }
+    nav {
+        background-color: #000000;
+    }
+    .home-img {
+        width: 100%;
+    }
+}
+
+/**************** ANIMATION *********************/
+
+@media (prefers-reduced-motion: no-preference) {
+    @keyframes fade-in {
+        from {scale: .8; opacity: 0;}
+        to {scale: 1; opacity: 1;}
+    }
+    
+    @keyframes fade {
+        from {opacity: 0;}
+        to {opacity: 1;}
+    }
+        
+    @keyframes testing {
+        from {opacity: 0;}
+        to {opacity: 1;}
+    }
+    
+    @keyframes scroll-watcher {
+        to {scale: 1 1; }
+    }
+}
+
+/********** FOOTER SECTION *************/
+footer {
+    background-color: #070d41;
+    text-align: center;
+    padding: 20px;
+}
+footer > img {
+    color: #fff;
+    padding-inline: 10px;
+}
+
+.fb:hover {
+    color: #070d41;
+}
