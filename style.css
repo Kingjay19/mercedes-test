@@ -57,10 +57,25 @@ nav li:hover {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    padding: 100px 70px;
+    /* padding: 100px 70px; */
     animation-name: testing ;
     animation-duration: 4s;
     animation-timing-function: ease-in-out;
+    position: relative;
+    height: 100svh;
+    overflow-x: clip;
+    padding-block: 7rem;
+    margin-block-end: 3rem;
+}
+
+.homepage div {
+    animation: fade-out linear;
+    animation-timeline: view();
+    animation-range: exit -300px;
+}
+
+@keyframes fade-out {
+    to {opacity: 0;}
 }
 
 
@@ -101,7 +116,7 @@ h1 {
     margin: 20px;
     animation: fade linear both;
     animation-timeline: view();
-    animation-range: entry 50% cover 50%;
+    animation-range-end: 300px;
     padding: none;
 }
 
@@ -117,13 +132,13 @@ h1 {
     border-bottom-right-radius: 20px;
     animation: fade-in linear both;
     animation-timeline: view();
-    animation-range: entry 50% cover 50%;
+    animation-range: entry;
 }
 
 
 @media (max-width: 700px) {
     .homepage {
-        margin: 5rem 0rem;
+        margin: 10px;
     }
     .container {
         padding: 50px;
@@ -141,7 +156,6 @@ h1 {
         border-bottom-left-radius: 20px;
         border-bottom-right-radius: 20px;
         border-top-right-radius: 0;
-        animation-range: entry 50% cover 30%;
     }
     nav ul {
         display: none;
